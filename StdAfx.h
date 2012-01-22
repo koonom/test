@@ -14,6 +14,8 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <iostream>
+#include <cstring>
 
 // TODO: reference additional headers your program requires here
 

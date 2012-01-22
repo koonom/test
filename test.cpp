@@ -3,14 +3,21 @@
 
 #include "stdafx.h"
 
+using namespace std;
+
 void squeeze(char[], char[]);
+int getline(char[], int);
 
 int main(int argc, char* argv[])
 {
-	printf("Hello World!\n");
-	char s1[6] = "hello";
-	char s2[3] = "eo";
+	char s1[100];
+	char s2[100];
+	cout << "Please input s1: ";
+	getline(s1, 100);
+	cout << "Please input s2: ";
+	getline(s2, 100);
 	printf("before squeeze : s1=%s\n",s1);
+	printf("before squeeze : s2=%s\n",s2);
 	squeeze(s1, s2);
 	printf("after squeeze : s1=%s\n", s1);
 	return 0;
@@ -27,4 +34,19 @@ void squeeze(char s1[], char s2[])
 			s1[k++] = s1[i];
 	}
 	s1[k] = '\0';
+}
+
+/* getline: read a line into s, return length */
+int getline(char s[], int lim)
+{
+	int c, i, j;
+	for(i = 0, j = 0; (c = getchar())!=EOF && c != '\n' && c != '\0'; ++i)
+	{
+		if(i < lim - 1)
+		{
+			s[j++] = c;
+		}
+	}
+	s[j] = '\0';
+	return i;
 }
