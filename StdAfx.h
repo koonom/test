@@ -12,6 +12,9 @@
 
 #define WIN32_LEAN_AND_MEAN		// Exclude rarely-used stuff from Windows headers
 
+#define YES 1
+#define NO  0
+
 #include <stdio.h>
 #include <math.h>
 #include <iostream>
